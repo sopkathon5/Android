@@ -12,25 +12,25 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.main.home.tag.tagWrite.TagWriteActivity"
-                  android:windowSoftInputMode="adjustResize">
-
+        <activity android:name=".ui.main.home.tag.post.PostActivity">
+        </activity>
+        <activity
+                android:name=".ui.main.home.tag.tagWrite.TagWriteActivity"
+                android:windowSoftInputMode="adjustResize">
         </activity>
         <activity android:name=".ui.main.home.tag.TagActivity">
         </activity>
         <activity android:name=".ui.main.signup.SignUpActivity"/>
         <activity android:name=".ui.main.MainActivity"/>
-
-        <activity android:name=".ui.main.SplashActivity"
-        android:theme="@style/SplashTheme">
-
+        <activity
+                android:name=".ui.main.SplashActivity"
+                android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
         </activity>
     </application>
 

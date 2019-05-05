@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent">
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white"
+>
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+    >
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="닉네임"
+                  android:textSize="12sp"
+                  android:textColor="#495057"
+                  android:layout_marginLeft="20dp"
+                  android:layout_marginTop="15dp"/>
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp">
+            <TextView
+                    android:id="@+id/rv_comment_item_tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:textColor="#2c2c2c"
+                    android:text="몇분 전"
 
-</android.support.constraint.ConstraintLayout>
+            />
+            <ImageView
+                    android:layout_toRightOf="@+id/rv_comment_item_tv_time"
+                    android:src="@drawable/mp_3_page_btn_dot"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:textSize="14sp"
+              android:textColor="#2c2c2c"
+              android:text="댓글"
+              android:layout_marginTop="1dp"
+              android:layout_marginLeft="20dp"
+              android:layout_marginBottom="24dp"
+    />
+</LinearLayout>

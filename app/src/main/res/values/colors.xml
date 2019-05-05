@@ -7,4 +7,7 @@
     <!--Basic color-->
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="store_text">#383838</color>
+    <color name="store_line">#b6b6b6</color>
+    <color name="store_back">#eeeef4</color>
 </resources>

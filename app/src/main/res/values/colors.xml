@@ -21,4 +21,7 @@
     <color name="homeRewardText">#383838</color>
     <color name="homeRewardLine">#b6b6b6</color>
   
+    <!--Tag-->
+    <color name="ToolBarBackground">#eeeef4</color>
+
 </resources>

@@ -26,7 +26,7 @@
 
   
     <!--Tag-->
-    <color name="ToolBarBackground">#eeeef4</color>
+    <color name="tagBackground">#eeeef4</color>
 
 
 </resources>

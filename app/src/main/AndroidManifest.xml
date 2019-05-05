@@ -12,7 +12,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.main.home.tag.tagWrite.TagWriteActivity">
+        <activity android:name=".ui.main.home.tag.tagWrite.TagWriteActivity"
+                  android:windowSoftInputMode="adjustResize">
+
         </activity>
         <activity android:name=".ui.main.home.tag.TagActivity">
         </activity>

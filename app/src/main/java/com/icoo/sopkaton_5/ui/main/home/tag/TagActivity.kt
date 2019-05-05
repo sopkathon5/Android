@@ -2,18 +2,29 @@ package com.icoo.sopkaton_5.ui.main.home.tag
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import android.view.MenuItem
 import com.icoo.sopkaton_5.R
+import com.icoo.sopkaton_5.data.model.Test.TestModel
+import com.icoo.sopkaton_5.data.model.post.PostModel
+import com.icoo.sopkaton_5.ui.main.home.HomeRecyclerViewAdapter
+import com.icoo.sopkaton_5.ui.main.home.tag.tagWrite.TagWriteActivity
+import com.icoo.sopkaton_5.util.IIdxClickListener
 import kotlinx.android.synthetic.main.activity_tag.*
+import kotlinx.android.synthetic.main.fragment_home.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
-class TagActivity : AppCompatActivity() {
+class TagActivity : AppCompatActivity(), IIdxClickListener {
+    private val tagDataList = ArrayList<PostModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tag)
         setToolBar()
         setOnClickListener()
+        setRecyclerView()
 
         val intent = getIntent()
         var idx = intent.getIntExtra("idx", 0)
@@ -36,6 +47,11 @@ class TagActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onItemClick(idx: Int) {
+
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.getItemId()) {
             android.R.id.home -> {
@@ -45,17 +61,29 @@ class TagActivity : AppCompatActivity() {
             else -> return super.onOptionsItemSelected(item)
         }
     }
+    private fun setRecyclerView() {
+        tagDataList.add(PostModel(0, "DoorJung", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "#피곤 #졸림", 10, 10))
+        tagDataList.add(PostModel(0, "DoorJung", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "#피곤 #졸림", 10, 10))
+        tagDataList.add(PostModel(0, "DoorJung", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "#피곤 #졸림", 10, 10))
+        tagDataList.add(PostModel(0, "DoorJung", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "#피곤 #졸림", 10, 10))
+        tagDataList.add(PostModel(0, "DoorJung", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "#피곤 #졸림", 10, 10))
+
+        val tagRecyclerViewAdapter = TagRecyclerViewAdapter(this, tagDataList)
+        act_tag_rv_post.adapter = tagRecyclerViewAdapter
+        act_tag_rv_post.layoutManager = LinearLayoutManager(this)
+        tagRecyclerViewAdapter.setOnItemClickListener(this)
+    }
+
     private fun setToolBar() {
         //툴바
         setSupportActionBar(act_tag_tb_toolbar)
         supportActionBar!!.setTitle("")
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        //supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back)
     }
 
     private fun setOnClickListener() {
         act_tag_iv_write.setOnClickListener {
-            toast("새 글 쓰기 테스트다 우히힣")
+            startActivity<TagWriteActivity>()
         }
     }
 }

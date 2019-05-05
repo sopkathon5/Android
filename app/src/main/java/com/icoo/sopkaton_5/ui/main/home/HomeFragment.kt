@@ -12,11 +12,12 @@ import com.icoo.sopkaton_5.R
 import com.icoo.sopkaton_5.data.model.Test.TestModel
 import com.icoo.sopkaton_5.ui.main.home.tag.TagActivity
 import com.icoo.sopkaton_5.util.IHomeClickListener
+import com.icoo.sopkaton_5.util.IIdxClickListener
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.rv_home_contents.*
 import org.jetbrains.anko.support.v4.startActivity
 
-class HomeFragment: Fragment(), IHomeClickListener {
+class HomeFragment: Fragment(), IIdxClickListener {
     private lateinit var rootView: View
     private var reward: String = "3,200"
     private val homeDataList = ArrayList<TestModel>()

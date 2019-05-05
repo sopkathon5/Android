@@ -15,14 +15,15 @@ import com.bumptech.glide.Glide
 import com.icoo.sopkaton_5.R
 import com.icoo.sopkaton_5.data.model.Test.TestModel
 import com.icoo.sopkaton_5.util.IHomeClickListener
+import com.icoo.sopkaton_5.util.IIdxClickListener
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeRecyclerViewAdapter(val ctx: Context, val dataList: ArrayList<TestModel>) :
     RecyclerView.Adapter<HomeRecyclerViewAdapter.Holder>() {
 
-    private var listener: IHomeClickListener? = null
+    private var listener: IIdxClickListener? = null
 
-    fun setOnItemClickListener(listener: IHomeClickListener) {
+    fun setOnItemClickListener(listener: IIdxClickListener) {
         this.listener = listener
     }
 

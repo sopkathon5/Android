@@ -11,5 +11,6 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         startActivity<MainActivity>()
+        finish()
     }
 }

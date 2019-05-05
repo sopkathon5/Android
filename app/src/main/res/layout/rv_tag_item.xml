@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+        android:id="@+id/rv_tag_item_ll_view"
+        android:layout_marginBottom="5dp"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:background="@color/white"
         android:layout_width="match_parent"
@@ -10,12 +12,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <TextView
-                android:id="@+id/rv_tag_item_tv_nickname"
+                android:id="@+id/rv_tag_item_tv_tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="닉네임"
+                android:text="#태그"
                 android:textSize="15sp"
-                android:textColor="#2c2c2c"
+                android:textColor="#ff5959"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="13dp"
         />
@@ -59,12 +61,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         <TextView
-                android:id="@+id/rv_tag_item_tv_tag"
+                android:id="@+id/rv_tag_item_tv_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
                 android:textColor="#343a40"
-                android:text="#태그"
+                android:text="닉네임"
                 android:layout_marginLeft="16dp"        />
 
         <LinearLayout

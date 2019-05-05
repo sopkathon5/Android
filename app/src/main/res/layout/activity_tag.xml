@@ -5,6 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/tagBackground"
         tools:context=".ui.main.home.tag.TagActivity">
 
     <LinearLayout
@@ -15,8 +16,7 @@
         <android.support.v7.widget.Toolbar
                 android:id="@+id/act_tag_tb_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/ToolBarBackground">
+                android:layout_height="?attr/actionBarSize">
             <TextView
                     android:id="@+id/act_tag_tv_title"
                     android:layout_gravity="center"

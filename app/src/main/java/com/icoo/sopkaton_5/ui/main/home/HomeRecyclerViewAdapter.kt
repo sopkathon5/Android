@@ -1,28 +1,24 @@
 package com.icoo.sopkaton_5.ui.main.home
 
 import android.content.Context
-import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import com.bumptech.glide.Glide
 
 import com.icoo.sopkaton_5.R
-import com.icoo.sopkaton_5.data.model.Test.TestModel
-import com.icoo.sopkaton_5.util.IHomeClickListener
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.icoo.sopkaton_5.data.model.keyword.KeywordModel
+import com.icoo.sopkaton_5.data.model.test.TestModel
+import com.icoo.sopkaton_5.util.IIdxClickListener
 
-class HomeRecyclerViewAdapter(val ctx: Context, val dataList: ArrayList<TestModel>) :
+class HomeRecyclerViewAdapter(val ctx: Context, val dataList: ArrayList<KeywordModel>) :
     RecyclerView.Adapter<HomeRecyclerViewAdapter.Holder>() {
 
-    private var listener: IHomeClickListener? = null
+    private var listener: IIdxClickListener? = null
 
-    fun setOnItemClickListener(listener: IHomeClickListener) {
+    fun setOnItemClickListener(listener: IIdxClickListener) {
         this.listener = listener
     }
 
@@ -36,12 +32,12 @@ class HomeRecyclerViewAdapter(val ctx: Context, val dataList: ArrayList<TestMode
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.view.setOnClickListener {
             if (listener != null) {
-                listener!!.onItemClick(dataList[position].idx)
+                listener!!.onItemClick(dataList[position].keywordIdx)
             }
         }
 //        Glide.with(holder.img).load(dataList[position].img).into(holder.img)
-        holder.tag.text = dataList[position].tag
-        holder.term.text = dataList[position].term
+        holder.tag.text = "#${dataList[position].content}"
+        holder.term.text = dataList[position].endDate
     }
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {

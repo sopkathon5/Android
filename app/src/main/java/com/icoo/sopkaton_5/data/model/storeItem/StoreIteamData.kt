@@ -1,6 +1,4 @@
-package com.icoo.sopkaton_5.data.model.Test
-
-import android.media.Image
+package com.icoo.sopkaton_5.data.model.storeItem
 
 data class StoreIteamData(
     var shop:String,

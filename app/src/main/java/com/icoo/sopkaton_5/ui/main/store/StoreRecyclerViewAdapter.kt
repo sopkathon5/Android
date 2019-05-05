@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.icoo.sopkaton_5.R
-import com.icoo.sopkaton_5.data.model.Test.StoreIteamData
+import com.icoo.sopkaton_5.data.model.storeItem.StoreIteamData
 
 class  StoreRecyclerViewAdapter (val ctx:Context, var dataList : ArrayList<StoreIteamData>)
     : RecyclerView.Adapter<StoreRecyclerViewAdapter.Holder>() {

@@ -9,13 +9,12 @@
 
     <!--회원가입 bar-->
     <RelativeLayout
-            android:id="@+id/rl_set_bar_sign_up_act"
+            android:id="@+id/rl_set_bar_sign_in_act"
             android:layout_width="match_parent"
             android:layout_height="56dp">
 
         <!--뒤로가기버튼-->
         <RelativeLayout
-                android:id="@+id/btn_write_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
@@ -27,23 +26,26 @@
 
         </RelativeLayout>
 
+
         <TextView
+                android:fontFamily="@font/nanum_extra_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="회원가입"
+                android:text="로그인"
                 android:textColor="#707070"
                 android:textSize="18sp"/>
 
     </RelativeLayout>
 
+
     <!--회원가입 정보 입력 창-->
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rl_set_bar_sign_up_act"
+            android:layout_below="@+id/rl_set_bar_sign_in_act"
             android:layout_marginHorizontal="48dp"
-            android:layout_marginTop="108dp">
+            android:layout_marginTop="147dp">
 
         <LinearLayout
                 android:layout_width="match_parent"
@@ -53,11 +55,11 @@
             <!--이메일(아이디)입력-->
             <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="42dp"
+                    android:layout_height="45dp"
                     android:background="@drawable/signup_round_box">
 
                 <EditText
-                        android:id="@+id/et_id_signup_act"
+                        android:id="@+id/et_id_sign_in_act"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
@@ -77,12 +79,13 @@
             <!--비밀번호-->
             <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="42dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/signup_round_box">
 
                 <EditText
-                        android:id="@+id/et_password_signup_act"
+                        android:inputType="textPassword"
+                        android:id="@+id/et_password_sign_in_act"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
@@ -97,97 +100,44 @@
 
             </RelativeLayout>
 
-            <!--닉네임-->
-            <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="42dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/signup_round_box">
-
-                <EditText
-                        android:id="@+id/et_nickname_signup_act"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="16dp"
-                        android:background="@null"
-                        android:maxLines="1"
-                        android:inputType="text"
-                        android:hint="닉네임"
-                        android:textCursorDrawable="@null"
-                        android:textColorHint="#cecece"
-                        android:textSize="14sp"/>
-
-            </RelativeLayout>
-
-            <!--성별-->
-            <RelativeLayout
-                    android:id="@+id/rl_radiobtn_signup_act"
-                    android:layout_width="match_parent"
-                    android:layout_height="42dp"
-                    android:layout_marginTop="16dp">
-
-                <TextView
-                        android:id="@+id/tv_sex_radio_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="8dp"
-                        android:textSize="16sp"
-                        android:text="성별"
-                />
-
-                <RadioGroup
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="16dp"
-                        android:orientation="horizontal"
-                        android:layout_toRightOf="@+id/tv_sex_radio_btn"
-                >
-                    <RadioButton
-                            android:id="@+id/rg_btn_man"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:layout_gravity="center"
-                            android:text="남"/>
-
-                    <RadioButton
-                            android:id="@+id/rg_btn_woman"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="8dp"
-                            android:text="여"/>
-
-                </RadioGroup>
-
-            </RelativeLayout>
-
-
             <!--완료버튼-->
             <RelativeLayout
-                    android:id="@+id/rl_complete_btn_signup__act"
+                    android:layout_marginTop="48dp"
+                    android:id="@+id/rl_complete_btn_sign_in__act"
                     android:layout_width="match_parent"
-                    android:layout_height="42dp"
-                    android:layout_below="@+id/rl_radiobtn_signup_act"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginHorizontal="16dp"
-                    android:background="#e2e2e2 ">
+                    android:layout_height="56dp"
+                    android:background="#ff5959 ">
 
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="완료"
+                        android:text="로그인하기"
                         android:textColor="#ffffff"
                         android:textSize="18sp"/>
 
             </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/rl_complete_text_sign_in__act"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#495057"
+                        android:lineSpacingExtra="16sp"
+                        android:gravity="center_horizontal"
+                        tools:text="회원이 아니신가요? 가입하기"
+                />
+            </RelativeLayout>
+
         </LinearLayout>
 
     </RelativeLayout>
-
 
 </RelativeLayout>
 

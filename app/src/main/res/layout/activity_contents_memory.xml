@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <!--뒤로가기-->
+    <RelativeLayout
+            android:id="@+id/rl_set_bar_contents_memory_act"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:elevation="3dp"
+    >
+
+        <RelativeLayout
+                android:id="@+id/img_back_btn_content_act"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="16dp"
+                    android:src="@drawable/mp_3_page_btn_back"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rl_set_bar_contents_memory_act">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+        >
+
+            <ImageView
+                    android:id="@+id/img_content_memory_act"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/memory_content_img"
+            />
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#FFFFFF"
+                    android:layout_below="@+id/img_content_memory_act"
+            >
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:lineHeight="28sp"
+                        android:textSize="16sp"
+                        android:textColor="#2c2c2c"
+                        android:lineSpacingExtra="8dp"
+                        android:fontFamily="@font/nanum_round"
+                        android:text="세계적인 면도기 브랜드 질레트는 아시아 선수 최초로 챔피언스 리그 결승에 출전한 맨체스터 유나이티드의 박지성을 ‘퓨전’ 제품의 모델로 발탁했다고 공식 발표했다.  질레트 브랜드 100년 역사상 한국인을 모델로 발탁한 것은 박지성이 처음이다. 그 동안 질레트는 데이비드 베컴, 티에리 앙리와 같은 슈퍼스타들을 모델로 기용해왔기에, 이번 박지성의 모델 발탁은 그의 축구선수로서의 위상이 얼마나 높은가를 새삼 확인시켜주는 사건이다.
+특히 이번 박지성의 모델 선정은 한국에서 이루어 진 것이 아니라 계약에서부터 광고 촬영에 이르기까지 질레트 아시아 본부에서 직접 진행한 것으로 알려졌다. 질레트 아시아 본부 마케팅 디렉터 올서 애므레는 '퓨전은 2007년부터 앙리, 우즈, 페더러 등 세계적인 스포츠 스타들과 함께 챔피언 캠페인을 진행해왔다. 박지성은 이들과 어깨를 나란히 할 수 있는 세계적인 스포츠 스타일 뿐만 아니라, 한국에서의 박지성의 입지는 오히려 이들을 넘어선다' 고 박지성의 발탁 배경을 설명했다."
+                />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+

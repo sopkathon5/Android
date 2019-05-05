@@ -9,18 +9,22 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.icoo.sopkaton_5.R
-import com.icoo.sopkaton_5.data.model.Test.TestModel
+import com.icoo.sopkaton_5.data.model.keyword.KeywordModel
+import com.icoo.sopkaton_5.data.model.keyword.KeywordResponse
+import com.icoo.sopkaton_5.data.remote.api.NetworkService
 import com.icoo.sopkaton_5.ui.main.home.tag.TagActivity
-import com.icoo.sopkaton_5.util.IHomeClickListener
 import com.icoo.sopkaton_5.util.IIdxClickListener
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.rv_home_contents.*
-import org.jetbrains.anko.support.v4.startActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class HomeFragment: Fragment(), IIdxClickListener {
     private lateinit var rootView: View
+    private val api: NetworkService = NetworkService.create()
+
     private var reward: String = "3,200"
-    private val homeDataList = ArrayList<TestModel>()
+    private val homeDataList = ArrayList<KeywordModel>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         rootView = inflater.inflate(R.layout.fragment_home, container, false)
@@ -29,13 +33,9 @@ class HomeFragment: Fragment(), IIdxClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        homeDataList.add(TestModel(0, "", "#MP3", "~04.08"))
-        homeDataList.add(TestModel(1, "", "#불량식품", "~04.08"))
-        homeDataList.add(TestModel(2, "", "#체육대회", "~04.08"))
-        homeDataList.add(TestModel(3, "", "#야자", "~04.08"))
         frag_home_tv_reward.text = reward
+        loadData()
 
-        setRecyclerView()
     }
 
     override fun onItemClick(idx: Int) {
@@ -49,6 +49,22 @@ class HomeFragment: Fragment(), IIdxClickListener {
         frag_home_rv_contents.adapter = homeRecyclerViewAdapter
         frag_home_rv_contents.layoutManager = GridLayoutManager(activity, 2)
         homeRecyclerViewAdapter.setOnItemClickListener(this)
+    }
+
+
+    private fun loadData() {
+        val getKeywordResponse = api.getKeyword()
+        getKeywordResponse.enqueue(object : Callback<KeywordResponse> {
+            override fun onFailure(call: Call<KeywordResponse>, t: Throwable) {
+            }
+
+            override fun onResponse(call: Call<KeywordResponse>, response: Response<KeywordResponse>) {
+                if (response.isSuccessful) {
+                    homeDataList.addAll(response.body()!!.data)
+                    setRecyclerView()
+                }
+            }
+        })
     }
 
     companion object {

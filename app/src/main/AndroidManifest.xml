@@ -12,16 +12,20 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+
         <activity android:name=".ui.main.home.tag.post.PostActivity">
+        </activity>
+        <activity android:name=".ui.main.signIn.SignInActivity">
         </activity>
         <activity
                 android:name=".ui.main.home.tag.tagWrite.TagWriteActivity"
                 android:windowSoftInputMode="adjustResize">
         </activity>
-        <activity android:name=".ui.main.home.tag.TagActivity">
-        </activity>
+        <activity android:name=".ui.main.home.tag.TagActivity"/>
         <activity android:name=".ui.main.signup.SignUpActivity"/>
         <activity android:name=".ui.main.MainActivity"/>
+        <activity android:name=".ui.main.contents.ContentsMemoryActivity"/>
+
         <activity
                 android:name=".ui.main.SplashActivity"
                 android:theme="@style/SplashTheme">

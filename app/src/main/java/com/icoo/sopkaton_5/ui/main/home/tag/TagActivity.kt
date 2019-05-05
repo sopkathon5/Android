@@ -33,25 +33,27 @@ class TagActivity : AppCompatActivity(), IIdxClickListener {
         val intent = getIntent()
         idx = intent.getIntExtra("idx", 0)
         when(idx) {
-            0 -> {
-                act_tag_tv_title.text = "#MP3"
-                act_tag_tv_subtitle.text = "음악을 이 놈으로 들었어"
-            }
             1 -> {
-                act_tag_tv_title.text = "#불량식품"
-                act_tag_tv_subtitle.text = "어쩌구저쩌구"
+                act_tag_tv_title.text = "#MP3"
+//                act_tag_tv_subtitle.text = "음악을 이 놈으로 들었어"
             }
             2 -> {
-                act_tag_tv_title.text = "#체육대회"
-                act_tag_tv_subtitle.text = "어쩌구저쩌구"
+                act_tag_tv_title.text = "#불량식품"
             }
             3 -> {
+                act_tag_tv_title.text = "#체육대회"
+            }
+            4 -> {
                 act_tag_tv_title.text = "#야자"
-                act_tag_tv_subtitle.text = "어쩌구저쩌구"
             }
         }
         loadData(idx)
 
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        loadData(idx)
     }
 
     override fun onItemClick(idx: Int) {
@@ -76,6 +78,7 @@ class TagActivity : AppCompatActivity(), IIdxClickListener {
 
             override fun onResponse(call: Call<PostResponse>, response: Response<PostResponse>) {
                 if (response.isSuccessful) {
+                    tagDataList.clear()
                     tagDataList.addAll(response.body()!!.data)
                     setRecyclerView()
                 }
@@ -100,7 +103,7 @@ class TagActivity : AppCompatActivity(), IIdxClickListener {
     private fun setOnClickListener() {
         act_tag_iv_write.setOnClickListener {
             val intent = Intent(this, TagWriteActivity::class.java)
-            intent.putExtra("keywordIdx", idx)
+            intent.putExtra("idx", idx)
             startActivity(intent)
         }
     }

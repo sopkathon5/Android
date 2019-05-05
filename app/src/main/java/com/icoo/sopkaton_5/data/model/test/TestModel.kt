@@ -1,4 +1,4 @@
-package com.icoo.sopkaton_5.data.model.Test
+package com.icoo.sopkaton_5.data.model.test
 
 
 data class TestModel(

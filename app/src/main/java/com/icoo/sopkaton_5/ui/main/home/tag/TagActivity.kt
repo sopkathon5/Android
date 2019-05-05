@@ -1,33 +1,37 @@
 package com.icoo.sopkaton_5.ui.main.home.tag
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.MenuItem
 import com.icoo.sopkaton_5.R
-import com.icoo.sopkaton_5.data.model.Test.TestModel
+import com.icoo.sopkaton_5.data.model.keyword.KeywordResponse
 import com.icoo.sopkaton_5.data.model.post.PostModel
-import com.icoo.sopkaton_5.ui.main.home.HomeRecyclerViewAdapter
+import com.icoo.sopkaton_5.data.model.post.PostResponse
+import com.icoo.sopkaton_5.data.remote.api.NetworkService
 import com.icoo.sopkaton_5.ui.main.home.tag.tagWrite.TagWriteActivity
 import com.icoo.sopkaton_5.util.IIdxClickListener
 import kotlinx.android.synthetic.main.activity_tag.*
-import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.toast
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class TagActivity : AppCompatActivity(), IIdxClickListener {
     private val tagDataList = ArrayList<PostModel>()
+    private val api: NetworkService = NetworkService.create()
+    var idx = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tag)
         setToolBar()
         setOnClickListener()
-        setRecyclerView()
+
 
         val intent = getIntent()
-        var idx = intent.getIntExtra("idx", 0)
+        idx = intent.getIntExtra("idx", 0)
         when(idx) {
             0 -> {
                 act_tag_tv_title.text = "#MP3"
@@ -46,6 +50,8 @@ class TagActivity : AppCompatActivity(), IIdxClickListener {
                 act_tag_tv_subtitle.text = "어쩌구저쩌구"
             }
         }
+        loadData(idx)
+
     }
 
     override fun onItemClick(idx: Int) {
@@ -61,13 +67,23 @@ class TagActivity : AppCompatActivity(), IIdxClickListener {
             else -> return super.onOptionsItemSelected(item)
         }
     }
-    private fun setRecyclerView() {
-        tagDataList.add(PostModel(0, "#피곤 #졸림", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "DoorJung", 10, 10))
-        tagDataList.add(PostModel(0, "#피곤 #졸림", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "DoorJung", 10, 10))
-        tagDataList.add(PostModel(0, "#피곤 #졸림", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "DoorJung", 10, 10))
-        tagDataList.add(PostModel(0, "#피곤 #졸림", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "DoorJung", 10, 10))
-        tagDataList.add(PostModel(0, "#피곤 #졸림", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "DoorJung", 10, 10))
 
+    private fun loadData(keywordIdx: Int) {
+        val getKeywordResponse = api.getPostByKeyword(keywordIdx)
+        getKeywordResponse.enqueue(object : Callback<PostResponse> {
+            override fun onFailure(call: Call<PostResponse>, t: Throwable) {
+            }
+
+            override fun onResponse(call: Call<PostResponse>, response: Response<PostResponse>) {
+                if (response.isSuccessful) {
+                    tagDataList.addAll(response.body()!!.data)
+                    setRecyclerView()
+                }
+            }
+        })
+    }
+
+    private fun setRecyclerView() {
         val tagRecyclerViewAdapter = TagRecyclerViewAdapter(this, tagDataList)
         act_tag_rv_post.adapter = tagRecyclerViewAdapter
         act_tag_rv_post.layoutManager = LinearLayoutManager(this)
@@ -83,7 +99,9 @@ class TagActivity : AppCompatActivity(), IIdxClickListener {
 
     private fun setOnClickListener() {
         act_tag_iv_write.setOnClickListener {
-            startActivity<TagWriteActivity>()
+            val intent = Intent(this, TagWriteActivity::class.java)
+            intent.putExtra("keywordIdx", idx)
+            startActivity(intent)
         }
     }
 }

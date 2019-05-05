@@ -1,34 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".ui.main.contents.ContentsFragment">
 
-    <LinearLayout
+    <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="추억 맞이"/>
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="찐했던 그 때의 추억을 알려드릴게요."
-        />
-
-        <android.support.v7.widget.RecyclerView
+        <!--회원가입 bar-->
+        <RelativeLayout
+                android:id="@+id/rl_set_bar_contents_frag"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="56dp"
+                android:background="#FFFFFF"
+                android:elevation="3dp"
+        >
 
-        </android.support.v7.widget.RecyclerView>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="추억맞이"
+                    android:fontFamily="@font/nanum_extra_bold"
+                    android:textColor="#000000"
+                    android:textSize="20sp"/>
 
-    </LinearLayout>
+        </RelativeLayout>
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rl_set_bar_contents_frag">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+            >
+
+                <TextView
+                        android:id="@+id/tv_contents_text_frag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="16dp"
+                        android:text="진했던 그 때의 추억을 알려드릴게요."
+                />
+
+                <ImageView
+                        android:id="@+id/img_contents1_frag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_contents_text_frag"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:src="@drawable/memory_banner_1"
+                />
+
+                <ImageView
+                        android:id="@+id/img_contents2_frag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_contents1_frag"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:src="@drawable/memory_banner_2"
+                />
+
+                <ImageView
+                        android:id="@+id/img_contents3_frag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_contents2_frag"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:src="@drawable/memory_banner_3"
+                />
+
+                <ImageView
+                        android:id="@+id/img_contents4_frag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_contents3_frag"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/memory_banner_4"
+
+                />
+
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
 
 
 </FrameLayout>

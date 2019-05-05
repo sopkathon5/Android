@@ -27,7 +27,6 @@
 
         </RelativeLayout>
 
-
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,14 +37,13 @@
 
     </RelativeLayout>
 
-
     <!--회원가입 정보 입력 창-->
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/rl_set_bar_sign_up_act"
             android:layout_marginHorizontal="48dp"
-            android:layout_marginTop="56dp">
+            android:layout_marginTop="108dp">
 
         <LinearLayout
                 android:layout_width="match_parent"
@@ -80,7 +78,7 @@
             <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="42dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/signup_round_box">
 
                 <EditText
@@ -103,7 +101,7 @@
             <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="42dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/signup_round_box">
 
                 <EditText
@@ -124,9 +122,10 @@
 
             <!--성별-->
             <RelativeLayout
+                    android:id="@+id/rl_radiobtn_signup_act"
                     android:layout_width="match_parent"
                     android:layout_height="42dp"
-                    android:layout_marginTop="12dp">
+                    android:layout_marginTop="16dp">
 
                 <TextView
                         android:id="@+id/tv_sex_radio_btn"
@@ -147,45 +146,48 @@
                 >
                     <RadioButton
                             android:id="@+id/rg_btn_man"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_weight="1"
-                            android:text="남" />
+                            android:layout_marginLeft="16dp"
+                            android:layout_gravity="center"
+                            android:text="남"/>
 
                     <RadioButton
                             android:id="@+id/rg_btn_woman"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="8dp"
                             android:text="여"/>
 
                 </RadioGroup>
 
             </RelativeLayout>
 
+
+            <!--완료버튼-->
+            <RelativeLayout
+                    android:id="@+id/rl_complete_btn_signup__act"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_below="@+id/rl_radiobtn_signup_act"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="#e2e2e2 ">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="완료"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp"/>
+
+            </RelativeLayout>
         </LinearLayout>
 
     </RelativeLayout>
 
-    <!--완료버튼-->
-    <RelativeLayout
-            android:id="@+id/rl_complete_btn_signup__act"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_alignParentBottom="true"
-            android:background="#e2e2e2 ">
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="완료"
-                android:textColor="#ffffff"
-                android:textSize="18sp"/>
-
-    </RelativeLayout>
 
 </RelativeLayout>
 

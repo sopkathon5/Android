@@ -22,9 +22,16 @@
         </activity>
         <activity android:name=".ui.main.signup.SignUpActivity"/>
         <activity android:name=".ui.main.MainActivity"/>
+
+        <activity android:name=".ui.main.contents.ContentsMemoryActivity"/>
+
+
+
+
         <activity
                 android:name=".ui.main.SplashActivity"
                 android:theme="@style/SplashTheme">
+          
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>

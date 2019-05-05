@@ -20,5 +20,9 @@
     <color name="homeBackground">#eeeef4</color>
     <color name="homeRewardText">#383838</color>
     <color name="homeRewardLine">#b6b6b6</color>
-  
+
+
+    <color name="color_alizarin">#e74c3c</color>
+
+
 </resources>

@@ -42,20 +42,20 @@ class TagRecyclerViewAdapter(val ctx: Context, val dataList: ArrayList<PostModel
                 listener!!.onItemClick(dataList[position].idx)
             }
         }
-        holder.nickname.text = dataList[position].nickname
+        holder.tag.text = dataList[position].tag
         holder.time.text = dataList[position].time
         holder.contents.text = dataList[position].contents
-        holder.tag.text = dataList[position].tag
+        holder.nickname.text = dataList[position].nickname
         holder.likeCnt.text = dataList[position].likeCnt.toString()
         holder.commentCnt.text = dataList[position].commentCnt.toString()
     }
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val view: LinearLayout = itemView.findViewById(R.id.rv_tag_item_ll_view) as LinearLayout
-        val nickname: TextView = itemView.findViewById(R.id.rv_tag_item_tv_nickname) as TextView
+        val tag: TextView = itemView.findViewById(R.id.rv_tag_item_tv_tag) as TextView
         val time: TextView = itemView.findViewById(R.id.rv_tag_item_tv_time) as TextView
         val contents: TextView = itemView.findViewById(R.id.rv_tag_item_tv_contents) as TextView
-        val tag: TextView = itemView.findViewById(R.id.rv_tag_item_tv_tag) as TextView
+        val nickname: TextView = itemView.findViewById(R.id.rv_tag_item_tv_nickname) as TextView
         val likeCnt: TextView = itemView.findViewById(R.id.rv_tag_item_tv_like_cnt) as TextView
         val commentCnt: TextView = itemView.findViewById(R.id.rv_tag_item_tv_comment_cnt) as TextView
     }

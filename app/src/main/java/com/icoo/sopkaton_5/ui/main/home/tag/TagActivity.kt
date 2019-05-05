@@ -62,11 +62,11 @@ class TagActivity : AppCompatActivity(), IIdxClickListener {
         }
     }
     private fun setRecyclerView() {
-        tagDataList.add(PostModel(0, "DoorJung", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "#피곤 #졸림", 10, 10))
-        tagDataList.add(PostModel(0, "DoorJung", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "#피곤 #졸림", 10, 10))
-        tagDataList.add(PostModel(0, "DoorJung", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "#피곤 #졸림", 10, 10))
-        tagDataList.add(PostModel(0, "DoorJung", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "#피곤 #졸림", 10, 10))
-        tagDataList.add(PostModel(0, "DoorJung", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "#피곤 #졸림", 10, 10))
+        tagDataList.add(PostModel(0, "#피곤 #졸림", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "DoorJung", 10, 10))
+        tagDataList.add(PostModel(0, "#피곤 #졸림", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "DoorJung", 10, 10))
+        tagDataList.add(PostModel(0, "#피곤 #졸림", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "DoorJung", 10, 10))
+        tagDataList.add(PostModel(0, "#피곤 #졸림", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "DoorJung", 10, 10))
+        tagDataList.add(PostModel(0, "#피곤 #졸림", "5분 전", "와 해커톤 너무 졸리다 핵졸리다", "DoorJung", 10, 10))
 
         val tagRecyclerViewAdapter = TagRecyclerViewAdapter(this, tagDataList)
         act_tag_rv_post.adapter = tagRecyclerViewAdapter

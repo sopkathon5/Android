@@ -12,9 +12,9 @@ class MainViewPagerAdapter (fm : FragmentManager, val fCount : Int): FragmentSta
 
     override fun getItem(position: Int): Fragment? {
         when(position){
-            0 -> return HomeFragment()
-            1 -> return ContentsFragment()
-            2 -> return StoreFragment()
+            0 -> return HomeFragment.newInstance()
+            1 -> return ContentsFragment.newInstance()
+            2 -> return StoreFragment.newInstance()
             3 -> return MyPageFragment.newInstance()
             else -> return null
         }

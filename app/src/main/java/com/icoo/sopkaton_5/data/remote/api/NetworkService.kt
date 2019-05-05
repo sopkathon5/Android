@@ -35,6 +35,14 @@ interface NetworkService {
         @Body() body : JsonObject
     ): Call<BaseResponse>
 
+    //회원가입
+    @POST("/user/join")
+    fun postSignUp(
+        @Header("Content-Type") content_type: String,
+        @Body() body : JsonObject
+    ): Call<BaseResponse>
+
+
     companion object {
         private const val BASE_URL = "http://52.78.120.172:8082"
 

@@ -8,6 +8,7 @@
         tools:context=".ui.main.home.tag.tagWrite.TagWriteActivity">
 
     <LinearLayout
+            android:layout_above="@+id/act_tag_write_iv_camera"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">

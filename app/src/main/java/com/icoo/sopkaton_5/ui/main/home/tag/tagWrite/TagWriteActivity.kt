@@ -27,16 +27,16 @@ class TagWriteActivity : AppCompatActivity() {
         val intent = getIntent()
         idx = intent.getIntExtra("idx", 0)
         when(idx) {
-            0 -> {
+            1 -> {
                 act_tag_write_tv_keyword.text = "#MP3"
             }
-            1 -> {
+            2 -> {
                 act_tag_write_tv_keyword.text = "#불량식품"
             }
-            2 -> {
+            3 -> {
                 act_tag_write_tv_keyword.text = "#체육대회"
             }
-            3 -> {
+            4 -> {
                 act_tag_write_tv_keyword.text = "#야자"
             }
         }
@@ -55,11 +55,10 @@ class TagWriteActivity : AppCompatActivity() {
 
     private fun sendData() {
         val jsonObject = JSONObject()
-        jsonObject.put("userIdx", 7)//테스트용
+        jsonObject.put("userIdx", 8)//테스트용
         jsonObject.put("keywordIdx", idx)
         jsonObject.put("name", act_tag_write_et_title.text)
         jsonObject.put("content", act_tag_write_et_contents.text)
-
 
         val gsonObject = JsonParser().parse(jsonObject.toString()) as JsonObject
 
@@ -70,7 +69,7 @@ class TagWriteActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
                 if (response.isSuccessful) {
-
+                    finish()
                 }
             }
         })

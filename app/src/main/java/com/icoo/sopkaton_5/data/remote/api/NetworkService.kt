@@ -4,7 +4,6 @@ import com.google.gson.JsonObject
 import com.icoo.sopkaton_5.data.model.base.BaseResponse
 import com.icoo.sopkaton_5.data.model.keyword.KeywordResponse
 import com.icoo.sopkaton_5.data.model.post.PostResponse
-import com.icoo.sopkaton_5.data.model.test.TestResponse
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -26,6 +25,12 @@ interface NetworkService {
     //게시글 작성
     @POST("/content")
     fun postPost(
+        @Header("Content-Type") content_type: String,
+        @Body() body : JsonObject
+    ): Call<BaseResponse>
+
+    @POST("/user/login")
+    fun postSignIn(
         @Header("Content-Type") content_type: String,
         @Body() body : JsonObject
     ): Call<BaseResponse>

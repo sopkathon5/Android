@@ -7,17 +7,100 @@
         android:layout_height="match_parent"
         tools:context=".ui.main.home.tag.TagActivity">
 
-    <android.support.v7.widget.Toolbar
-            android:id="@+id/act_tag_tb_toolbar"
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/white">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/act_tag_tb_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/ToolBarBackground">
+            <TextView
+                    android:id="@+id/act_tag_tv_title"
+                    android:layout_gravity="center"
+                    android:text="#주제"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-    <TextView
-            android:text="주제"
+        </android.support.v7.widget.Toolbar>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="219dp">
+            <ImageView
+                    android:background="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            <LinearLayout
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="22dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <LinearLayout
+                        android:layout_marginLeft="22dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            android:textColor="@color/white"
+                            android:text="“"
+                            android:textSize="30sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    <TextView
+                            android:textColor="@color/white"
+                            android:text="라떼는 말이야,"
+                            android:textSize="30sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_marginLeft="38dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            android:id="@+id/act_tag_tv_subtitle"
+                            android:textColor="@color/white"
+                            android:text="음악을 이 놈으로 들었어"
+                            android:textSize="30sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    <TextView
+                            android:textColor="@color/white"
+                            android:text="”"
+                            android:textSize="30sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/act_tag_rv_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ImageView
+            android:id="@+id/act_tag_iv_write"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="28dp"
+            android:src="@drawable/mp_3_page_btn_floating_copy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
 
 </RelativeLayout>

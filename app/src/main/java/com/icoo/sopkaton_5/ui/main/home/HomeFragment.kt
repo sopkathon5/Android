@@ -29,9 +29,9 @@ class HomeFragment: Fragment(), IHomeClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeDataList.add(TestModel(0, "", "#MP3", "~04.08"))
-        homeDataList.add(TestModel(0, "", "#불량식품", "~04.08"))
-        homeDataList.add(TestModel(0, "", "#체육대회", "~04.08"))
-        homeDataList.add(TestModel(0, "", "#야자", "~04.08"))
+        homeDataList.add(TestModel(1, "", "#불량식품", "~04.08"))
+        homeDataList.add(TestModel(2, "", "#체육대회", "~04.08"))
+        homeDataList.add(TestModel(3, "", "#야자", "~04.08"))
         frag_home_tv_reward.text = reward
 
         setRecyclerView()

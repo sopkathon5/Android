@@ -10,15 +10,15 @@ import com.icoo.sopkaton_5.data.model.keyword.KeywordResponse
 import com.icoo.sopkaton_5.data.model.post.PostModel
 import com.icoo.sopkaton_5.data.model.post.PostResponse
 import com.icoo.sopkaton_5.data.remote.api.NetworkService
+import com.icoo.sopkaton_5.ui.main.home.tag.post.PostActivity
 import com.icoo.sopkaton_5.ui.main.home.tag.tagWrite.TagWriteActivity
-import com.icoo.sopkaton_5.util.IIdxClickListener
+import com.icoo.sopkaton_5.util.ITagClickListener
 import kotlinx.android.synthetic.main.activity_tag.*
-import org.jetbrains.anko.startActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class TagActivity : AppCompatActivity(), IIdxClickListener {
+class TagActivity : AppCompatActivity(), ITagClickListener {
     private val tagDataList = ArrayList<PostModel>()
     private val api: NetworkService = NetworkService.create()
     var idx = 0
@@ -28,7 +28,6 @@ class TagActivity : AppCompatActivity(), IIdxClickListener {
         setContentView(R.layout.activity_tag)
         setToolBar()
         setOnClickListener()
-
 
         val intent = getIntent()
         idx = intent.getIntExtra("idx", 0)
@@ -57,7 +56,9 @@ class TagActivity : AppCompatActivity(), IIdxClickListener {
     }
 
     override fun onItemClick(idx: Int) {
-
+        val intent = Intent(this, PostActivity::class.java)
+        intent.putExtra("idx", idx)
+        startActivity(intent)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

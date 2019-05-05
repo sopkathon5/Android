@@ -4,6 +4,7 @@ import com.google.gson.JsonObject
 import com.icoo.sopkaton_5.data.model.base.BaseResponse
 import com.icoo.sopkaton_5.data.model.keyword.KeywordResponse
 import com.icoo.sopkaton_5.data.model.post.PostResponse
+import com.icoo.sopkaton_5.data.model.postDetail.PostDetailResponse
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -21,6 +22,10 @@ interface NetworkService {
     ): Call<PostResponse>
 
     //게시글 상세 조회
+    @GET("/content/{contentIdx}")
+    fun getPostDetail(
+        @Path("contentIdx") contentIdx: Int
+    ): Call<PostDetailResponse>
 
     //게시글 작성
     @POST("/content")

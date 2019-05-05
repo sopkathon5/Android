@@ -9,15 +9,16 @@ import android.widget.LinearLayout
 import android.widget.TextView
 
 import com.icoo.sopkaton_5.R
+import com.icoo.sopkaton_5.data.local.SharedPreferenceController
 import com.icoo.sopkaton_5.data.model.post.PostModel
-import com.icoo.sopkaton_5.util.IIdxClickListener
+import com.icoo.sopkaton_5.util.ITagClickListener
 
 class TagRecyclerViewAdapter(val ctx: Context, val dataList: ArrayList<PostModel>) :
     RecyclerView.Adapter<TagRecyclerViewAdapter.Holder>() {
 
-    private var listener: IIdxClickListener? = null
+    private var listener: ITagClickListener? = null
 
-    fun setOnItemClickListener(listener: IIdxClickListener) {
+    fun setOnItemClickListener(listener: ITagClickListener) {
         this.listener = listener
     }
 
@@ -31,13 +32,13 @@ class TagRecyclerViewAdapter(val ctx: Context, val dataList: ArrayList<PostModel
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.view.setOnClickListener {
             if (listener != null) {
-                listener!!.onItemClick(dataList[position].keywordIdx)
+                listener!!.onItemClick(dataList[position].contentIdx)
             }
         }
-        holder.nickname.text = dataList[position].name
+        holder.nickname.text =  SharedPreferenceController.getUsername(ctx)//dataList[position].userIdx.toString()
         holder.time.text = dataList[position].createdAt
         holder.contents.text = dataList[position].content
-//        holder.tag.text = dataList[position].tag
+        holder.tag.text = dataList[position].name
         holder.likeCnt.text = dataList[position].heartCount.toString()
         holder.commentCnt.text = dataList[position].commentCount.toString()
 

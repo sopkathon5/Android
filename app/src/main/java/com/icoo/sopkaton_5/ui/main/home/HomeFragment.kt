@@ -13,13 +13,13 @@ import com.icoo.sopkaton_5.data.model.keyword.KeywordModel
 import com.icoo.sopkaton_5.data.model.keyword.KeywordResponse
 import com.icoo.sopkaton_5.data.remote.api.NetworkService
 import com.icoo.sopkaton_5.ui.main.home.tag.TagActivity
-import com.icoo.sopkaton_5.util.IIdxClickListener
+import com.icoo.sopkaton_5.util.IHomeClickListener
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HomeFragment: Fragment(), IIdxClickListener {
+class HomeFragment: Fragment(), IHomeClickListener {
     private lateinit var rootView: View
     private val api: NetworkService = NetworkService.create()
 

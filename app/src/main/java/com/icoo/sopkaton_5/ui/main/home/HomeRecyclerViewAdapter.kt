@@ -12,14 +12,14 @@ import android.widget.TextView
 import com.icoo.sopkaton_5.R
 import com.icoo.sopkaton_5.data.model.keyword.KeywordModel
 import com.icoo.sopkaton_5.data.model.test.TestModel
-import com.icoo.sopkaton_5.util.IIdxClickListener
+import com.icoo.sopkaton_5.util.IHomeClickListener
 
 class HomeRecyclerViewAdapter(val ctx: Context, val dataList: ArrayList<KeywordModel>) :
     RecyclerView.Adapter<HomeRecyclerViewAdapter.Holder>() {
 
-    private var listener: IIdxClickListener? = null
+    private var listener: IHomeClickListener? = null
 
-    fun setOnItemClickListener(listener: IIdxClickListener) {
+    fun setOnItemClickListener(listener: IHomeClickListener) {
         this.listener = listener
     }
 

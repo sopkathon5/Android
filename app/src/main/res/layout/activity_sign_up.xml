@@ -122,29 +122,6 @@
 
             </RelativeLayout>
 
-            <!--생년월일-->
-            <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="42dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/signup_round_box">
-
-                <EditText
-                        android:id="@+id/et_birth_signup_act"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="16dp"
-                        android:background="@null"
-                        android:maxLines="1"
-                        android:inputType="datetime"
-                        android:hint="생년월일(990402)"
-                        android:textCursorDrawable="@null"
-                        android:textColorHint="#cecece"
-                        android:textSize="14sp"/>
-
-            </RelativeLayout>
-
             <!--성별-->
             <RelativeLayout
                     android:layout_width="match_parent"

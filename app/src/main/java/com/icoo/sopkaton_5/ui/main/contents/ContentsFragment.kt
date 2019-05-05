@@ -14,10 +14,12 @@ class ContentsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         rootView = inflater.inflate(R.layout.fragment_contents, container, false)
         return rootView
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
     }
 
     companion object {
@@ -27,4 +29,5 @@ class ContentsFragment : Fragment() {
             return ContentsFragment()
         }
     }
+
 }
